@@ -1,0 +1,27 @@
+<div>
+    <h2>Családfa</h2>
+    <ul>
+      <li *ngFor="let member of familyMembers">
+        {{ member.name }}
+        <ul>
+          <li *ngFor="let child of member.children">
+            {{ child.name }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
+  <div>
+    <h2>Új családtag hozzáadása</h2>
+    <label for="name">Név:</label>
+    <input type="text" id="name" [(ngModel)]="newMember.name" required>
+  
+    <label for="motherName">Anyja neve:</label>
+    <input type="text" id="motherName" [(ngModel)]="newMember.motherName">
+  
+    <label for="fatherName">Apja neve:</label>
+    <input type="text" id="fatherName" [(ngModel)]="newMember.fatherName">
+  
+    <button (click)="addFamilyMember()">Hozzáadás</button>
+  </div>
